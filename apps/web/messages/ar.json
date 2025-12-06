@@ -1,0 +1,67 @@
+{
+  "Index": {
+    "title": "أهلاً بك في حرف"
+  },
+  "Register": {
+    "title": "التسجيل",
+    "name": "الاسم",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "role": "أنا...",
+    "client": "عميل",
+    "freelancer": "مستقل",
+    "submit": "التسجيل"
+  },
+  "Login": {
+    "title": "تسجيل الدخول",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "submit": "تسجيل الدخول"
+  },
+  "AdminLogin": {
+    "title": "تسجيل دخول المشرف",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "submit": "تسجيل الدخول",
+    "otp": "الرمز السري",
+    "verify": "تحقق"
+  },
+  "CreateProject": {
+    "title": "أنشئ مشروعًا جديدًا",
+    "projectTitle": "عنوان المشروع",
+    "projectDescription": "وصف المشروع",
+    "budget": "الميزانية (بالجنيه المصري)",
+    "submit": "أنشئ المشروع"
+  },
+  "Projects": {
+    "title": "تصفح المشاريع"
+  },
+  "Bid": {
+    "title": "قدم عرضًا",
+    "proposal": "العرض",
+    "amount": "المبلغ (بالجنيه المصري)",
+    "submit": "قدم العرض"
+  },
+  "Payment": {
+    "title": "إرسال إثبات الدفع",
+    "proofOfPayment": "إثبات الدفع (لقطة شاشة)",
+    "submit": "إرسال"
+  },
+  "AdminPayments": {
+    "title": "مراجعة المدفوعات",
+    "approve": "الموافقة",
+    "reject": "الرفض"
+  },
+  "Chat": {
+    "title": "المحادثة",
+    "send": "إرسال"
+  },
+  "AdminDashboard": {
+    "title": "لوحة تحكم المشرف",
+    "totalRevenue": "إجمالي الإيرادات",
+    "paymentLock": "قفل نظام الدفع",
+    "togglePaymentLock": "تبديل قفل الدفع",
+    "lockPayments": "قفل المدفوعات",
+    "unlockPayments": "فتح المدفوعات"
+  }
+}

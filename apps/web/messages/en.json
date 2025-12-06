@@ -1,0 +1,67 @@
+{
+  "Index": {
+    "title": "Welcome to Hirvn"
+  },
+  "Register": {
+    "title": "Register",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "role": "I am a...",
+    "client": "Client",
+    "freelancer": "Freelancer",
+    "submit": "Register"
+  },
+  "Login": {
+    "title": "Login",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Login"
+  },
+  "AdminLogin": {
+    "title": "Admin Login",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Login",
+    "otp": "OTP",
+    "verify": "Verify"
+  },
+  "CreateProject": {
+    "title": "Create a new project",
+    "projectTitle": "Project Title",
+    "projectDescription": "Project Description",
+    "budget": "Budget (in EGP)",
+    "submit": "Create Project"
+  },
+  "Projects": {
+    "title": "Browse Projects"
+  },
+  "Bid": {
+    "title": "Submit a bid",
+    "proposal": "Proposal",
+    "amount": "Bid Amount (in EGP)",
+    "submit": "Submit Bid"
+  },
+  "Payment": {
+    "title": "Submit Payment Proof",
+    "proofOfPayment": "Proof of Payment (Screenshot)",
+    "submit": "Submit"
+  },
+  "AdminPayments": {
+    "title": "Review Payments",
+    "approve": "Approve",
+    "reject": "Reject"
+  },
+  "Chat": {
+    "title": "Chat",
+    "send": "Send"
+  },
+  "AdminDashboard": {
+    "title": "Admin Dashboard",
+    "totalRevenue": "Total Revenue",
+    "paymentLock": "Payment System Lock",
+    "togglePaymentLock": "Toggle Payment Lock",
+    "lockPayments": "Lock Payments",
+    "unlockPayments": "Unlock Payments"
+  }
+}

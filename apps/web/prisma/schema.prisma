@@ -1,0 +1,119 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  password      String?
+  role          Role      @default(CLIENT)
+  otp           String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  projects   Project[]
+  bids       Bid[]
+  payments   Payment[]
+  sent       Notification[] @relation("NotificationSender")
+  received   Notification[] @relation("NotificationReceiver")
+}
+
+model Project {
+  id          String        @id @default(cuid())
+  title       String
+  description String
+  budget      Int
+  status      ProjectStatus @default(OPEN)
+  clientId    String
+  freelancerId String?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  client     User      @relation(fields: [clientId], references: [id])
+  bids       Bid[]
+  payments   Payment[]
+}
+
+model Bid {
+  id           String    @id @default(cuid())
+  proposal     String
+  amount       Int
+  status       BidStatus @default(PENDING)
+  projectId    String
+  freelancerId String
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  project    Project @relation(fields: [projectId], references: [id])
+  freelancer User    @relation(fields: [freelancerId], references: [id])
+}
+
+model Payment {
+  id              String        @id @default(cuid())
+  amount          Int
+  status          PaymentStatus @default(PENDING)
+  proofOfPayment  String
+  projectId       String
+  clientId        String
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  project Project @relation(fields: [projectId], references: [id])
+  client  User    @relation(fields: [clientId], references: [id])
+}
+
+model Notification {
+  id          String   @id @default(cuid())
+  message     String
+  read        Boolean  @default(false)
+  senderId    String
+  receiverId  String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  sender   User @relation("NotificationSender", fields: [senderId], references: [id])
+  receiver User @relation("NotificationReceiver", fields: [receiverId], references: [id])
+}
+
+model Settings {
+  id          String   @id @default(cuid())
+  paymentLock Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+enum Role {
+  CLIENT
+  FREELANCER
+  ADMIN
+}
+
+enum ProjectStatus {
+  OPEN
+  IN_PROGRESS
+  COMPLETED
+  CLOSED
+}
+
+enum BidStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+}
+
+enum PaymentStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
